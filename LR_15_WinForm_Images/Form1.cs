@@ -15,15 +15,15 @@ namespace LR_15_WinForm_Images
             UpdateList();
 
         }
-        /*Для папки вибраної користувачем отримати список зображень в ній.
-        Відобразити його в ListBox. При виборі зображення – відобразити його в
-        ImageView*/
+        /*Р”Р»СЏ РїР°РїРєРё РІРёР±СЂР°РЅРѕС— РєРѕСЂРёСЃС‚СѓРІР°С‡РµРј РѕС‚СЂРёРјР°С‚Рё СЃРїРёСЃРѕРє Р·РѕР±СЂР°Р¶РµРЅСЊ РІ РЅС–Р№.
+Р’С–РґРѕР±СЂР°Р·РёС‚Рё Р№РѕРіРѕ РІ ListBox. РџСЂРё РІРёР±РѕСЂС– Р·РѕР±СЂР°Р¶РµРЅРЅСЏ вЂ“ РІС–РґРѕР±СЂР°Р·РёС‚Рё Р№РѕРіРѕ РІ
+ImageView*/
         private void UpdateList()
         {
             ListFileImages.Items.Clear();
             foreach (string FileEntry in FilePath)
             {
-                //відобразив лише назви
+                //ГўВіГ¤Г®ГЎГ°Г Г§ГЁГў Г«ГЁГёГҐ Г­Г Г§ГўГЁ
                 ListFileImages.Items.Add(Path.GetFileName(FileEntry));
             }
         }
@@ -35,7 +35,7 @@ namespace LR_15_WinForm_Images
 
         private void OpenFolder_Click(object sender, EventArgs e)
         {
-            /* Вибір файлів вручну
+            /* Р’РёР±С–СЂ С„Р°Р№Р»С–РІ РІСЂСѓС‡РЅСѓ
              * openFileDialog1.Filter = "Image Files (*.jpg)|*.jpg|(*.JPEG)|*.JPEG|All Files (*.*)|*.*";
              if (openFileDialog.ShowDialog() == DialogResult.OK)
              {
@@ -48,10 +48,9 @@ namespace LR_15_WinForm_Images
                  UpdateList();
 
              }*/
-            // всі зображення з папки
+            // РІРёР±С–СЂ СѓСЃСЊРѕРіРѕ Р· РїР°РїРєРё
             FilePath.Clear();
-            using (var folderBrowserDialog = new FolderBrowserDialog())
-            {
+
                 if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                 {
                     string folderPath = folderBrowserDialog.SelectedPath;
@@ -67,7 +66,6 @@ namespace LR_15_WinForm_Images
                     }
 
                     UpdateList();
-                }
             }
         }
 
